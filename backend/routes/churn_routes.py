@@ -7,8 +7,8 @@ import pandas as pd
 model, features = joblib.load("backend/models/churn_model.pkl")
 # Create blueprint 
 churn_bp= Blueprint("churn",__name__ )
-@churn_bp.route("/predict_churn",method=['post'])
-def predict_churn:
+@churn_bp.route("/predict_churn",methods=['POST'])
+def predict_churn():
     try:
         data=request.json
         X=pd.DataFrame([data], columns=features)
