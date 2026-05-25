@@ -1,5 +1,6 @@
 from flask  import Blueprint, jsonify, request
-from backend.models.fraud_model import predict_fraud 
+from backend.models.fraud_model import predict_fraud
+from backend.models.price_model import predict_price
 price_routes = Blueprint("price_routes",__name__)
 @price_routes.route("/predict_price", methods=["post"])
 def predict_price_endpoint():
